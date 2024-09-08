@@ -77,10 +77,10 @@ packages:
     dependency: "direct main"
     description:
       name: awesome_notifications
-      sha256: d9e46ce7f5171ee1e9b1c5bc6dc40bd77528561f592842ce97ce3a0a9ae155ef
+      sha256: "65f730f9c0e73a346039ef746384bcff1773f9f03821b859705a7ab8db977b23"
       url: "https://pub.dev"
     source: hosted
-    version: "0.9.3+1"
+    version: "0.8.2"
   awesome_notifications_core:
     dependency: "direct main"
     description:
@@ -838,13 +838,13 @@ packages:
     source: hosted
     version: "1.0.0+1"
   intl:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: intl
-      sha256: d6f56758b7d3014a48af9701c085700aac781a92a87a62b1333b46d8879661cf
+      sha256: "3bc132a9dbce73a7e4a21a17d06e1878839ffbf975568bc875c60537824b0c4d"
       url: "https://pub.dev"
     source: hosted
-    version: "0.19.0"
+    version: "0.18.1"
   intl_phone_number_input:
     dependency: "direct main"
     description:
@@ -881,10 +881,10 @@ packages:
     dependency: transitive
     description:
       name: json_class
-      sha256: "65f5a57595beade1fdda6458c2eb89738b2651b3a476e52c8fcdefd37c646043"
+      sha256: "95ae95062f7827ca77b7eb7b4a72db97bf01f71ed22bdbd98a3cc6d2691de961"
       url: "https://pub.dev"
     source: hosted
-    version: "3.0.0+13"
+    version: "3.0.0+8"
   json_schema:
     dependency: transitive
     description:
@@ -897,10 +897,10 @@ packages:
     dependency: "direct main"
     description:
       name: json_theme
-      sha256: "06e2514ad2acab0c1d2ae72d27d086353278869674788672bb839ef356376939"
+      sha256: c6ae6a88ccaec32eb04215e56d0099f8d139d5cfc22460aef38258ae46772eff
       url: "https://pub.dev"
     source: hosted
-    version: "6.4.1+5"
+    version: "6.4.0"
   json_theme_annotation:
     dependency: transitive
     description:
