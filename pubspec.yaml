@@ -60,7 +60,8 @@ dependencies:
   awesome_dialog: ^3.2.0
   json_theme: ^6.4.0
   flutter_native_splash: ^2.3.10
-
+dependency_overrides:
+  intl: ^0.19.0
 dev_dependencies:
   flutter_test:
     sdk: flutter
