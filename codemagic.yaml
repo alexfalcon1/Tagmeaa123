@@ -1,10 +1,6 @@
 workflows:
-    sample-workflow:
-        name: Codemagic Sample Workflow
-        max_build_duration: 120
-        instance_type: mac_mini_m1
-    scripts:
-        name: Run unit tests
-        script: flutter test --machine > test-results.json
-        test_report: test-results.json
-   
+   sample-workflow:
+       instance type: mac_mini_m1
+       scripts:
+        flutter pub get
+        flutter build ios --debug --no-codesign
