@@ -13,10 +13,12 @@ class MobileScannerView extends StatelessWidget {
         Expanded(child: Container()),
         Expanded(
           flex: 4,
-          child: MobileScanner(onDetect: (barCode) {
-            Get.defaultDialog(
-                title: 'Result', content: Text(barCode.toString()));
-          }, overlay: QRScannerOverlay(overlayColour: Colors.black.withOpacity(0.5),),),
+          child: MobileScanner(
+            onDetect: (barCode) {
+              Get.defaultDialog(
+                  title: 'Result', content: Text(barCode.toString()));
+            },
+          ),
         ),
         Expanded(child: Container()),
       ],
