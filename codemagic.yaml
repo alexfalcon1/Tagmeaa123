@@ -1,7 +1,11 @@
 workflows:
-    sample-workflow:
-         name: Codemagic Sample Workflow
-         instance type: mac_mini_m1
+  sample-workflow:
+    name: Codemagic Sample Workflow
+    instance_type: mac_mini_m1
     scripts:
-    - flutter pub get
-    - flutter build ios --debug --no-codesign
+      - name: Install dependencies
+        script: |
+          flutter pub get
+      - name: Build iOS app
+        script: |
+          flutter build ios --debug --no-codesign
