@@ -16,7 +16,4 @@ workflows:
           flutter build ios --release
     artifacts:
       - build/ios/ipa
-    environment:
-      ios_signing:
-        distribution_type: app_store # or: ad_hoc | development | enterprise
-        bundle_identifier: net.tagmee3.tagmee3
+
