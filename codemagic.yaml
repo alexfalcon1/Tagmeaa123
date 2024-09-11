@@ -2,6 +2,11 @@ workflows:
   sample-workflow:
     name: Codemagic Sample Workflow
     instance_type: mac_mini_m1
+        - build/ios/ipa
+    environment:
+      ios_signing:
+        distribution_type: app_store # or: ad_hoc | development | enterprise
+        bundle_identifier: net.tagmee3.tagmee3
     scripts:
       - name: Install dependencies
         script: |
@@ -14,8 +19,4 @@ workflows:
         script: |
           flutter build ios --release
     artifacts:
-      - build/ios/ipa
-    environment:
-      ios_signing:
-        distribution_type: app_store # or: ad_hoc | development | enterprise
-        bundle_identifier: net.tagmee3.tagmee3
+  
