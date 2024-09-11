@@ -11,7 +11,7 @@ workflows:
           cd ..
       - name: Build iOS app
         script: |
-          flutter build ios -allowProvisioningUpdates --release
+          flutter build ios
     artifacts:
       - build/ios/ipa
     environment:
