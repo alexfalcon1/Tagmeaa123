@@ -2,6 +2,9 @@ workflows:
   sample-workflow:
     name: Codemagic Sample Workflow
     instance_type: mac_mini_m1
+    environment:
+      groups:
+        - signing
     scripts:
       - name: Install dependencies
         script: |
@@ -12,8 +15,15 @@ workflows:
           cd ..
       - name: Build iOS app
         script: |
-          xcodebuild -allowProvisioningUpdates
-          flutter build ios --release
+          xcodebuild -workspace ios/Runner.xcworkspace \
+                     -scheme Runner \
+                     -configuration Release \
+                     -allowProvisioningUpdates \
+                     -archivePath build/ios/Runner.xcarchive \
+                     archive
+          xcodebuild -exportArchive \
+                     -archivePath build/ios/Runner.xcarchive \
+                     -exportOptionsPlist ios/Runner/ExportOptions.plist \
+                     -exportPath build/ios/ipa
     artifacts:
       - build/ios/ipa
-
