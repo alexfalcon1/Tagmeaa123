@@ -9,7 +9,7 @@ workflows:
       - name: Clean build folder
         script: |
           flutter clean
-          rm -rf build
+          rm -rf ios/build
       - name: Install dependencies
         script: |
           flutter pub get
@@ -23,11 +23,11 @@ workflows:
                      -scheme Runner \
                      -configuration Release \
                      -allowProvisioningUpdates \
-                     -archivePath build/ios/Runner.xcarchive \
+                     -archivePath ios/build/Runner.xcarchive \
                      archive
           xcodebuild -exportArchive \
-                     -archivePath build/ios/Runner.xcarchive \
+                     -archivePath ios/build/Runner.xcarchive \
                      -exportOptionsPlist ios/Runner/ExportOptions.plist \
-                     -exportPath build/ios/ipa
+                     -exportPath ios/build/ipa
     artifacts:
-      - build/ios/ipa
+      - ios/build/ipa
