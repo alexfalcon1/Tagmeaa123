@@ -5,7 +5,6 @@ workflows:
     environment:
       groups:
         - app_store_credentials
-        - signing_credentials
     scripts:
       - name: Clean build folder
         script: |
