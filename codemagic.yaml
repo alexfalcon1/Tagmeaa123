@@ -22,8 +22,10 @@ workflows:
                      -scheme Runner \
                      -configuration Release \
                      -allowProvisioningUpdates \
+                     -archivePath build/Runner.xcarchive \
                      archive | tee build.log
           xcodebuild -exportArchive \
+                     -archivePath build/Runner.xcarchive \
                      -exportOptionsPlist ios/Runner/ExportOptions.plist \
                      -exportPath build/ipa | tee export.log
     artifacts:
