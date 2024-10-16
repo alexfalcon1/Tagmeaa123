@@ -9,6 +9,12 @@ workflows:
       - name: Clean build folder
         script: |
           flutter clean
+      - name: Update Podfile
+        script: |
+          echo "platform :ios, '12.0'" > ios/Podfile
+          cd ios
+          pod install
+          cd ..
       - name: Install dependencies
         script: |
           flutter pub get
