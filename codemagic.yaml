@@ -19,9 +19,11 @@ workflows:
       - name: List iOS Directory Before Build
         script: ls -la ios
       - name: Print Working Directory
-        script: pwd
+        script: |
+          pwd
       - name: Print Archive Path
-        script: echo "Archive Path: ios/build/Runner.xcarchive"
+        script: |
+          echo "Archive Path: ios/build/Runner.xcarchive"
       - name: Build iOS app
         script: |
           set -e
