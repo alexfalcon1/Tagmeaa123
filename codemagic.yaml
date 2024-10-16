@@ -16,12 +16,6 @@ workflows:
           cd ios
           pod install
           cd ..
-      - name: Set Swift version and optimization level
-        script: |
-          cd ios
-          sed -i '' 's/SWIFT_VERSION = [0-9.]\+/SWIFT_VERSION = 5.0/' Podfile
-          sed -i '' 's/SWIFT_OPTIMIZATION_LEVEL = -O/SWIFT_OPTIMIZATION_LEVEL = -Onone/' Podfile
-          cd ..
       - name: Build iOS app
         script: |
           set -e
