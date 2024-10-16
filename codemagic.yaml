@@ -1,29 +1,21 @@
 workflows:
-  sample-workflow:
-    name: Codemagic Sample Workflow
+  ios-workflow:
+    name: iOS Workflow
     instance_type: mac_mini_m1
     environment:
       groups:
-        - info
+        - app_store_credentials
+        - signing_credentials
     scripts:
       - name: Clean build folder
         script: |
           flutter clean
-          rm -rf ios/build
       - name: Install dependencies
         script: |
           flutter pub get
           cd ios
           pod install
           cd ..
-      - name: List iOS Directory Before Build
-        script: ls -la ios
-      - name: Print Working Directory
-        script: |
-          pwd
-      - name: Print Archive Path
-        script: |
-          echo "Archive Path: ios/build/Runner.xcarchive"
       - name: Build iOS app
         script: |
           set -e
@@ -31,15 +23,11 @@ workflows:
                      -scheme Runner \
                      -configuration Release \
                      -allowProvisioningUpdates \
-                     -archivePath ios/build/Runner.xcarchive \
                      archive | tee build.log
           xcodebuild -exportArchive \
-                     -archivePath ios/build/Runner.xcarchive \
                      -exportOptionsPlist ios/Runner/ExportOptions.plist \
-                     -exportPath ios/build/ipa | tee export.log
-      - name: List iOS Directory After Build
-        script: ls -la ios/build
+                     -exportPath build/ipa | tee export.log
     artifacts:
-      - ios/build/ipa
+      - build/ipa
       - build.log
       - export.log
