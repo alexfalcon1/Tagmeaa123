@@ -6,15 +6,19 @@ workflows:
       groups:
         - info
     scripts:
-      - name: Install dependencies
+      - name: Clean build folder
         script: |
           flutter clean
+          rm -rf build
+      - name: Install dependencies
+        script: |
           flutter pub get
           cd ios
           pod install
           cd ..
       - name: Build iOS app
         script: |
+          set -e
           xcodebuild -workspace ios/Runner.xcworkspace \
                      -scheme Runner \
                      -configuration Release \
