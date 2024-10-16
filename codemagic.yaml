@@ -16,6 +16,8 @@ workflows:
           cd ios
           pod install
           cd ..
+      - name: List iOS Directory Before Build
+        script: ls -la ios
       - name: Build iOS app
         script: |
           set -e
@@ -29,6 +31,8 @@ workflows:
                      -archivePath ios/build/Runner.xcarchive \
                      -exportOptionsPlist ios/Runner/ExportOptions.plist \
                      -exportPath ios/build/ipa | tee export.log
+      - name: List iOS Directory After Build
+        script: ls -la ios/build
     artifacts:
       - ios/build/ipa
       - build.log
