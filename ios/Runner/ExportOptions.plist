@@ -6,7 +6,7 @@
   <string>app-store</string>
   <key>provisioningProfiles</key>
   <dict>
-    <key>com.your.bundle.identifier</key>
+    <key>net.tagmee3.tagmee3</key>
     <string>SecondTagmee3</string>
   </dict>
   <key>teamID</key>
